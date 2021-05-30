@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<!-- CSS only -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+		
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	* {
+	  box-sizing: border-box;
+	}
+
+	body {
+	  margin: 0;
+	  font-family: Arial;
+	  font-size: 17px;
+	}
+
+	#myVideomain {
+	  position: fixed;
+	  right: 0;
+	  bottom: 0;
+	  min-width: 100%; 
+	  min-height: 100%;
+	}
+
+	.contentmain {
+	  position: fixed;
+	  top: 0;
+	  background: rgba(0, 0, 0, 0.5);
+	  color: #f1f1f1;
+	  width: 100%;
+	  padding: 20px;
+	}
+	</style>
+</head>
+	
+	
+	<body class= "container">
+		<div id="recipient">
+			<video autoplay muted loop id="myVideomain">
+				<source src="bgmain.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+			<div class="contentmain">
+				<br>
+				<div >
+				
+					<h1> Suprise Ahead!!!</h1>
+					
+					<input class = "form controller-input" type="text" id = "name" name = "name" placeholder="enter your name">
+					<button class="btn btn-primary" onclick="myFunctionname()">Submit</button>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div id="wish" class=" container " >
+			<div class=" content row">
+				<video autoplay muted loop id="myVideo">
+					<source src="birthday.mp4" type="video/mp4">
+					Your browser does not support HTML5 video.
+				</video>
+			</div>
+			<div class="content row">
+				<h1>
+					<label>Happy birthday to You &nbsp</label><input class = "border border-light bg-transparent" type="text" id = "userName" name = "userName" disabled >
+				</h1>
+				<p>
+					On your birthday may life lead you to great happiness, success, 
+					and hope that all your wishes come true! May you enjoy your special day! 
+					Here's wishing you all the very best on your special day. 
+					May you be blessed with all the joy you can ever have and be blessed abundantly today, 
+					tomorrow, and the days to come!
+				</p>
+				<button class="btn btn-success" id="myBtn" onclick="myFunction()">Pause</button>
+			</div>
+			
+		</div>
+	
+	</body>
+
+	<script>
+		var video = document.getElementById("myVideo");
+		var btn = document.getElementById("myBtn");
+		var display = "none"
+		var recipient = document.getElementById("recipient");
+		var wish = document.getElementById("wish");
+		wish.style.display = display;
+		function myFunction() {
+		  if (video.paused) {
+			video.play();
+			btn.innerHTML = "Pause";
+		  } else {
+			video.pause();
+			btn.innerHTML = "Play";
+		  }
+		}
+		
+		function myFunctionname() {
+			var uName = document.getElementById('name').value;
+			document.getElementById('userName').value = uName ;
+			
+			if (wish.style.display === "none") {
+				wish.style.display = "block";
+				recipient.style.display = "none"
+			}
+		}
+	</script>
+	
+	
+</html>
